@@ -55,11 +55,11 @@ def process_xml_file(file_name, table_name, columns, check_column):
 
 
 # Insérer des données dans la base de données à partir des fichiers XML
+process_xml_file('sources_utf8.xml', 'SOURCES', ['source_code', 'ref_citation'], 'source_code')
+process_xml_file('const_utf8.xml', 'CONST', ['const_code', 'const_nom_fr', 'const_nom_eng'], 'const_code')
+process_xml_file('alim_grp_utf8.xml', 'ALIM_GRP', ['alim_grp_code', 'alim_grp_nom_fr', 'alim_grp_nom_eng', 'alim_ssgrp_code', 'alim_ssgrp_nom_fr', 'alim_ssgrp_nom_eng', 'alim_ssssgrp_code', 'alim_ssssgrp_nom_fr', 'alim_ssssgrp_nom_eng'], 'alim_grp_code')
 process_xml_file('alim_utf8.xml', 'ALIM', ['alim_code', 'alim_nom_fr', 'ALIM_NOM_INDEX_FR', 'alim_nom_eng', 'alim_grp_code', 'alim_ssgrp_code', 'alim_ssssgrp_code'], 'alim_code')
 process_xml_file('compo_utf8.xml', 'COMPO', ['alim_code', 'const_code', 'teneur', 'min', 'max', 'code_confiance', 'source_code'], 'alim_code')
-process_xml_file('alim_grp_utf8.xml', 'ALIM_GRP', ['alim_grp_code', 'alim_grp_nom_fr', 'alim_grp_nom_eng', 'alim_ssgrp_code', 'alim_ssgrp_nom_fr', 'alim_ssgrp_nom_eng', 'alim_ssssgrp_code', 'alim_ssssgrp_nom_fr', 'alim_ssssgrp_nom_eng'], 'alim_grp_code')
-process_xml_file('const_utf8.xml', 'CONST', ['const_code', 'const_nom_fr', 'const_nom_eng'], 'const_code')
-process_xml_file('sources_utf8.xml', 'SOURCES', ['source_code', 'ref_citation'], 'source_code')
 # Fermeture de la connexion à la base de données
 cursor.close()
 connection.close()
